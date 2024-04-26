@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload File</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .explanation {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    input[type="file"] {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>USIU LAB Scheduler</h1>
+    <div class="explanation">
+      <h2>Welcome to the Class Lab Assignment Program</h2>
+      <p>This program allows you to upload an Excel file containing class schedule information and automatically assigns classes to various labs based on their timing.</p>
+      <h3>Uploading Your Excel File</h3>
+      <p>To get started, please follow these steps:</p>
+      <ol>
+        <li>Prepare your class schedule data in an Excel file with the following format:</li>
+      </ol>
+      <ul>
+        <li><strong>Column 1:</strong> Start Time (e.g., 07:00)</li>
+        <li><strong>Column 2:</strong> Days (e.g., TR for Tuesday and Thursday)</li>
+        <li><strong>Column 3:</strong> Course Number (e.g., APT1040)</li>
+        <li><strong>Column 4:</strong> Section (e.g., C)</li>
+        <li><strong>Column 5:</strong> Course Title (e.g., INTRODUCTION TO WEB DESIGN & APPLICATIONS)</li>
+        <li><strong>Column 6:</strong> Faculty (e.g., Staff)</li>
+        <li><strong>Column 7:</strong> Capacity (e.g., 35)</li>
+      </ul>
+      <ol start="2">
+        <li>Save your Excel file.</li>
+        <li>Click on the "Choose File" button below and select your Excel file.</li>
+        <li>Click the "Upload" button to submit your file.</li>
+      </ol>
+      <h3>Class Lab Assignment Process</h3>
+      <p>Once you've uploaded your file, the program will process the data and assign classes to the available labs according to their timing. Lab capacities are not considered in this assignment process.</p>
+      <h3>Viewing the Results</h3>
+      <p>After the assignment process is complete, you'll be presented with the lab assignments for each time slot. Each assignment includes the class title, course number, section, professor, and the assigned lab.</p>
+    </div>
+    <!-- Form to upload the Excel file -->
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".xlsx">
+      <input type="submit" value="Upload">
+    </form>
+  </div>
+</body>
+</html>

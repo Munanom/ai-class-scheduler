@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7c6; /* Light background */
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 2px solid #ccc;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #ffcb05; /* Yellow */
+            color: #2b3990; /* Dark blue */
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        .button-container {
+            text-align: center;
+            margin: 40px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2b3990; /* Dark blue */
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #3c4ca9; /* Lighter blue */
+        }
+        .schedule-description {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>MW Schedule</h1>
+    <p class="schedule-description">Below is the schedule for classes on Monday and Wednesday:</p>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Class Title</th>
+            <th>Course No_Section</th>
+            <th>Lecturer</th>
+            <th>Assigned Lab</th>
+        </tr>
+        {% for row in MW_schedule %}
+            {% for i in range(0, row|length, 5) %}
+                <tr>
+                    {% for item in row[i:i+5] %}
+                        <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </table>
+
+    <h1>TR Schedule</h1>
+    <p class="schedule-description">Below is the schedule for classes on Tuesday and Thursday:</p>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Class Title</th>
+            <th>Course No_Section</th>
+            <th>Lecturer</th>
+            <th>Assigned Lab</th>
+        </tr>
+        {% for row in TR_schedule %}
+            {% for i in range(0, row|length, 5) %}
+                <tr>
+                    {% for item in row[i:i+5] %}
+                        <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        {% endfor %}
+    </table>
+
+    <!-- Add a link or button to go back to the upload page -->
+    <div class="button-container">
+        <p>If you want to upload another file, you can click the button below:</p>
+        <a href="/" class="button">Upload another file</a>
+    </div>
+</body>
+</html>
